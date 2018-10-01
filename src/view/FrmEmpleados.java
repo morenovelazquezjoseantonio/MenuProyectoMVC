@@ -11,7 +11,13 @@ import java.awt.event.ActionListener;
 
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
-
+/**
+ * @author Jose Antonio Moreno Velazquez
+ * clase FrmEmpleado
+ * @since 24-09-2018
+ * @version V-1
+ * Crea la ventana empleado
+ */
 public class FrmEmpleados extends JDialog {
 
 	private static final long serialVersionUID = 1L;

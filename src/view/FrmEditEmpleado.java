@@ -8,7 +8,13 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
-
+/**
+ * @author Jose Antonio Moreno Velazquez
+ * clase FrmEditEmpleado
+ * @since 24-09-2018
+ * @version V-1
+ * Crea la ventana editar empleado
+ */
 public class FrmEditEmpleado extends JDialog {
 
 	private static final long serialVersionUID = 1L;

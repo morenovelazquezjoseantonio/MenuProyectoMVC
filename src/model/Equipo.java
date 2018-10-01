@@ -1,5 +1,15 @@
 package model;
 
+/**
+ * @author Jose Antonio Moreno Velazquez
+ * clase Equipo
+ * @since 24-09-2018
+ * @version V-1
+ * Proyecto proyecto
+ * Empleado empleado
+ * Cargos puesto
+ */
+
 public class Equipo {
 
 	Proyecto proyecto;

@@ -9,7 +9,13 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import java.awt.Toolkit;
-
+/**
+ * @author Jose Antonio Moreno Velazquez
+ * clase FrmProyectos
+ * @since 24-09-2018
+ * @version V-1
+ * Crea la ventana proyectos
+ */
 public class FrmProyectos extends JDialog {
 
 	private static final long serialVersionUID = 1L;

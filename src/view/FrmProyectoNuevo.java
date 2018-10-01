@@ -11,7 +11,13 @@ import java.awt.event.WindowEvent;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import java.awt.Toolkit;
-
+/**
+ * @author Jose Antonio Moreno Velazquez
+ * clase FrmProyectoNuevo
+ * @since 24-09-2018
+ * @version V-1
+ * Crea la ventana proyecto nuevo
+ */
 public class FrmProyectoNuevo extends JDialog {
 
 	private static final long serialVersionUID = 1L;

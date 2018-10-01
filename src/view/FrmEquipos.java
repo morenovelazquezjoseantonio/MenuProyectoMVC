@@ -5,13 +5,20 @@ import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+
 import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
-
+/**
+ * @author Jose Antonio Moreno Velazquez
+ * clase FrmEquipo
+ * @since 24-09-2018
+ * @version V-1
+ * Crea la ventana equipos
+ */
 
 public class FrmEquipos extends JDialog {
 
@@ -90,7 +97,8 @@ public class FrmEquipos extends JDialog {
 		tableEquipos = new JTable();
 		scrollPaneEquipos.setColumnHeaderView(tableEquipos);
 		scrollPaneEquipos.setViewportView(tableEquipos);
-				
+		
+		
 		setVisible(true);
 
 	}

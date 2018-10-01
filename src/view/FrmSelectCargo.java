@@ -9,7 +9,13 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import java.awt.Toolkit;
-
+/**
+ * @author Jose Antonio Moreno Velazquez
+ * clase FrmSelectCargo
+ * @since 24-09-2018
+ * @version V-1
+ * Crea la ventana seleccion de cargos
+ */
 public class FrmSelectCargo extends JDialog {
 
 	private static final long serialVersionUID = 1L;
@@ -32,19 +38,15 @@ public class FrmSelectCargo extends JDialog {
 		btnSelect.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				controller.CtrEquipos.capturarDatosCargos();
-				controller.CtrEquipos.capturarDatosEqiposProyectos();;
 				dispose();
-			}
+				}
 		});
 
 		btnSelect.setBounds(160, 220, 120, 40);
 		getContentPane().add(btnSelect);
-
 		table = new JTable();
-		// table.setBounds(50, 30, 350, 160);
 		getContentPane().add(scrollPane);
 		scrollPane.setBounds(50, 30, 350, 160);
-		// getContentPane().add(scrollPane);
 		scrollPane.setColumnHeaderView(table);
 		scrollPane.setViewportView(table);
 

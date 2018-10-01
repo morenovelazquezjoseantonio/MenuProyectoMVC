@@ -8,10 +8,9 @@ import javax.swing.table.DefaultTableModel;
 import view.FrmEditEmpleado;
 /**
  * @author Jose Antonio Moreno Velazquez
- * clase CtrEmpleados (Controller Empleados)
- * @since 25-09-2018
+ * clase CtrEmpleados
+ * @since 24-09-2018
  * @version V-1
- *
  */
 
 public class CtrEmpleados {
@@ -62,7 +61,8 @@ public class CtrEmpleados {
 	}
 /**
  * Nombre del metodo borrarEmpleado
- * Conocer de la fila seleccionada en el JTable (filaActiva), la primera columna (contiene la PK (idPrimaryKey) del proyecto que quiero borrar
+ * Conocer de la fila seleccionada en el JTable (filaActiva), la primera columna
+ * (contiene la PK (idPrimaryKey) del empleado que quiero borrar
  * Actualiza tabla de empleados (actualizarJtableEmpleados())
  */
 	public static void borrarEmpleado() {
@@ -76,21 +76,31 @@ public class CtrEmpleados {
 		}
 	}
 /**
- * Nombre del metodo actualizar
- * 
- * 
+ * Nombre del metodo actualizarJTableEmpleados
+ * Obtiene datos de la base de datos
+ * Genera un modelo con los datos
+ * Envia los datos a la tabla
  */
 	public static void actualizarJTableEmpleados() {
 		try {
-			// obtener Datos de la BD
 			CachedRowSet datos = logic.LogicEmpleados.leerEmpleados();
-			// con los datos obtenidos generar un Modelo de JTable
 			DefaultTableModel modelo = util.Gui.generarModelo(datos);
-			// Pintar el JTable
 			view.FrmEmpleados.table.setModel(modelo);
+			view.FrmEmpleados.table.getColumnModel().getColumn(0).setMaxWidth(0);
+			view.FrmEmpleados.table.getColumnModel().getColumn(0).setMinWidth(0);
+			view.FrmEmpleados.table.getColumnModel().getColumn(0).setPreferredWidth(0);
 			} catch (Exception e) {
 		}
 	}
+	/**
+	 * Nombre del metodo selectEmpleado
+	 * Realiza una consulta a la base de datos a la table empleados
+	 * Selecciona un empleado de la tabla empleados
+	 * Recoge los datos de los campos dni,nombre,apellidos y genero
+	 * Sino se selecciona algun empleado de la tabla
+	 * muestra un mensaje de error
+	 * lanza la ventana de SelectEmpleado
+	 */
 	public static void selectEmpleado() {
 
 		int filaActiva = view.FrmEmpleados.table.getSelectedRow();
@@ -104,14 +114,21 @@ public class CtrEmpleados {
 				genero = view.FrmEmpleados.table.getValueAt(filaActiva, 4).toString();
 				new view.FrmSelectEmpleado();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			e.printStackTrace();
 			}
 		} else {
 			JOptionPane.showMessageDialog(null, "No se ha selecccionado nada");
 		}
 	}
-
+	/**
+	 * Nombre del metodo editarEmpleado
+	 * Realiza una consulta a la base de datos a la table empleados
+	 * Selecciona un empleado de la tabla empleados
+	 * Recoge los datos de los campos dni,nombre,apellidos y genero
+	 * Sino se selecciona algun empleado de la tabla
+	 * muestra un mensaje de error
+	 * lanza la ventana de infoEmpleado
+	 */
 	public static void editarEmpleado() {
 		int filaActiva = view.FrmEmpleados.table.getSelectedRow();
 		if (filaActiva >= 0) {
@@ -124,7 +141,6 @@ public class CtrEmpleados {
 				genero = view.FrmEmpleados.table.getValueAt(filaActiva, 4).toString();
 				new view.FrmInfoEmpleado();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		} else {
@@ -132,6 +148,15 @@ public class CtrEmpleados {
 		}
 	}
 
+	/**
+	 * Nombre del metodo modificarEmpleado
+	 * Realiza una consulta a la base de datos a la table empleados
+	 * Selecciona un empleado de la tabla empleados
+	 * Recoge los datos de los campos dni,nombre,apellidos y genero
+	 * Sino se selecciona algun empleado de la tabla
+	 * muestra un mensaje de error
+	 * lanza la ventana de EditEmpleado
+	 */
 	public static void modificarEmpleado() {
 
 		int filaActiva = view.FrmEmpleados.table.getSelectedRow();
@@ -147,8 +172,7 @@ public class CtrEmpleados {
 				apellidos = view.FrmEmpleados.table.getValueAt(filaActiva, 3).toString();
 				genero = view.FrmEmpleados.table.getValueAt(filaActiva, 4).toString();
 				new view.FrmEditEmpleado();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+				} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		} else {
@@ -156,6 +180,17 @@ public class CtrEmpleados {
 		}
 	}
 
+	/**
+	 * Nombre del metodo capturarEmpleado
+	 * Realiza una consulta a la base de datos a la table empleados
+	 * Selecciona un empleado de la tabla empleados
+	 * Recoge los datos de los campos idPrimaryKey,dni,nombre,apellidos y genero
+	 * Sino se selecciona algun empleado de la tabla
+	 * muestra un mensaje de error
+	 * Modifica la tabla de empleados con los nuevos datos 
+	 * recogidos de la ventana editEmpleado
+	 * Actualiza los datos de la tabla empleados
+	 */
 	public static void capturarDatos() {
 
 		int filaActiva = view.FrmEmpleados.table.getSelectedRow();
@@ -172,7 +207,6 @@ public class CtrEmpleados {
 				actualizarJTableEmpleados();
 
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		} else {

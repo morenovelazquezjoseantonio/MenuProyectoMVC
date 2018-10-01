@@ -16,7 +16,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 
 import java.awt.Toolkit;
-
+/**
+ * @author Jose Antonio Moreno Velazquez
+ * clase FrmPrincipal
+ * @since 24-09-2018
+ * @version V-1
+ * Crea la ventana principal
+ */
 public class FrmPrincipal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -95,7 +101,6 @@ public class FrmPrincipal extends JFrame {
 		mnMenuItemAyuda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "EN CONSTRUCCION...");
-
 			}
 		});
 		

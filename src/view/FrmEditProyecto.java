@@ -8,7 +8,13 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import java.awt.Toolkit;
-
+/**
+ * @author Jose Antonio Moreno Velazquez
+ * clase FrmEditProyecto
+ * @since 24-09-2018
+ * @version V-1
+ * Crea la ventana editar proyecto
+ */
 public class FrmEditProyecto extends JDialog {
 
 	private static final long serialVersionUID = 1L;

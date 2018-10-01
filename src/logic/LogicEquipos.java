@@ -11,7 +11,7 @@ public class LogicEquipos {
 	}
 
 	public static CachedRowSet getConsultaEquipos(String stringpK) throws SQLException {
-		String sql = "select e.ID_Equipo,t.Nombre,c.Cargo  from FBTrabajador as t inner join FBEquipo as e on t.ID_Trabajador=e.ID_Trabajador inner join FBcargo as c on e.ID_Cargo=c.ID_Cargo where ID_Proyectos="
+		String sql = "select e.ID_equipo,t.Nombre,t.Apellidos,c.Cargo from FBTrabajador as t inner join FBEquipo as e on t.ID_Trabajador=e.ID_Trabajador inner join FBcargo as c on e.ID_Cargo=c.ID_Cargo where ID_Proyectos="
 				+ stringpK;
 		return databasemanager.DBsqlServer.consultaSQL(sql);
 
@@ -22,8 +22,8 @@ public class LogicEquipos {
 	}
 
 	public static void guardarEquipos(String ID_P, String ID_T, String ID_C) throws SQLException {
-		String sql = "INSERT INTO FBequipo(ID_Proyectos,ID_Trabajador,ID_Cargo) VALUES ('" + ID_P + "','" + ID_T + "','"
-				+ ID_C + "')";
+		String sql = "INSERT INTO FBequipo(ID_Proyectos,ID_Trabajador,ID_Cargo) VALUES ('" + ID_P + "','"
+	+ ID_T + "','"+ ID_C + "')";
 		databasemanager.DBsqlServer.executeDML(sql);
 	}
 

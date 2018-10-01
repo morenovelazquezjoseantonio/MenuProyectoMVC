@@ -3,7 +3,13 @@ package view;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import java.awt.Toolkit;
-
+/**
+ * @author Jose Antonio Moreno Velazquez
+ * clase FrmInfoEmpleado
+ * @since 24-09-2018
+ * @version V-1
+ * Crea la ventana info empleado
+ */
 public class FrmInfoEmpleado extends JDialog {
 
 	private static final long serialVersionUID = 1L;

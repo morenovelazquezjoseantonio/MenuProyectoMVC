@@ -1,5 +1,15 @@
 package model;
 
+/**
+ * @author Jose Antonio Moreno Velazquez
+ * clase Empleado
+ * @since 24-09-2018
+ * @version V-1
+ * private String dni
+ * private String nombre
+ * private String apellidos
+ * private String genero
+ */
 public class Empleado {
 
 	private String dni;

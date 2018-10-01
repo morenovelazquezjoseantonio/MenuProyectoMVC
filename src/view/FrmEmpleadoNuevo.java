@@ -10,7 +10,13 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JDialog;
 import java.awt.Toolkit;
-
+/**
+ * @author Jose Antonio Moreno Velazquez
+ * clase FrmEmpleadoNuevo
+ * @since 24-09-2018
+ * @version V-1
+ * Crea la ventana nuevo empleado
+ */
 public class FrmEmpleadoNuevo extends JDialog {
 	public static String sentencia;
 	public static TextField tfDni;

@@ -1,5 +1,14 @@
 package model;
-
+/**
+ * @author Jose Antonio Moreno Velazquez
+ * clase Proyecto
+ * @since 24-09-2018
+ * @version V-1
+ * private String nombre
+ * private String presupuesto
+ * private String fechainicio
+ * private String fechafin
+ */
 public class Proyecto {
 
 	private String nombre;
